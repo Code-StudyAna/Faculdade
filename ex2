@@ -1,0 +1,90 @@
+import java.util.Scanner;
+
+public class Ex2 {
+
+    public static void line(){
+        System.out.print("\n");
+        System.out.println("-<>".repeat(30));
+        System.out.print("\n");
+    }
+
+    public static void calcularMedia (double nota1, double nota2, double nota3, int tipo, String nomeAluno){
+
+        if (tipo == 1){
+            double media = (nota1 + nota2 + nota3) / 3;
+            line();
+            System.out.println("Aluno: " + nomeAluno + "\nMédia = " + media);
+            line();
+        }
+        else {
+            double media = ( (nota1 * 0.2) + (nota2 * 0.3) + (nota3 * 0.5) ) / 3;
+            line();
+            System.out.println("Aluno: " + nomeAluno + "\nMédia = " + media);
+            line();
+        }
+    }
+
+    public static void binarioConvert (int valor){
+
+        String binario = "";
+
+        while (valor > 0){
+
+            int rest = valor % 2;
+            binario = rest + binario;
+            valor /= 2;
+
+        }
+
+        System.out.println("Conversão binária: " + binario);
+
+    }
+
+    public static void médiaGeral() {
+        for (int c = 1; c <= 30; c++) {
+
+            System.out.print("Nome do aluno \n>>> ");
+            String nomeAluno = sc.next();
+
+            System.out.print("Digite o valor 1 \n>>> ");
+            double valor1 = sc.nextDouble();
+
+            System.out.print("Digite o valor 2 \n>>> ");
+            double valor2 = sc.nextDouble();
+
+            System.out.print("Digite o valor 3 \n>>> ");
+            double valor3 = sc.nextDouble();
+
+            System.out.print("Digite 1 para Média Aritimética e 2 para média Ponderada: \n>>> ");
+            int tipo = sc.nextInt();
+
+            if (tipo != 1 && tipo != 2) {
+
+                while (true) {
+                    System.out.print("Opção inexistente! Tente novamente com 1 para Média Aritimética e 2 para média Ponderada: \n>>> ");
+                    tipo = sc.nextInt();
+
+                    if (tipo == 1)
+                        break;
+                    else if (tipo == 2)
+                        break;
+
+                }
+            }
+            calcularMedia(valor1, valor2, valor3, tipo, nomeAluno);
+    }
+
+    public static void main (String[]args){
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Você deseja fazer uma média ou converter um número em binário? \n[ 1 ] Média \n[ 2 ] Converter em binário");
+        int resp = sc.nextInt();
+
+        if (resp == 1){
+
+        }
+
+        }
+    }
+}
