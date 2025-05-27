@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class A2 {
+    //2)	Implemente um programa que verifique se um valor é perfeito ou não. Um valor é dito perfeito quando ele é igual
+    // a soma dos seus divisores excetuando ele próprio. (Ex: 6 é perfeito, 6 = 1 + 2 + 3, que são seus divisores).
+    // A função deve retornar também a lista dos divisores, apenas quando o número for perfeito.
+
+
+    public static void Num_Perfeito(int valor){
+
+        boolean num_perfeito = false;
+        String divisores = "";
+        int soma = 0;
+
+        for(int n = 1; n < valor; n++){
+
+            if (valor % n == 0){
+                divisores += n + " ";
+                soma += n;
+            }
+        }
+        if (soma == valor){
+            System.out.println("O valor digtado " + valor + " é um número perfeito e tem os divisores: " + divisores);
+        } else {
+            System.out.println("O valor digitado não é um número inteiro!");
+        }
+    }
+
+    public static void main(String[]arg){
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Informe o valor desejado\n>>> ");
+        int valor = input.nextInt();
+
+        Num_Perfeito(valor);
+    }
+}
